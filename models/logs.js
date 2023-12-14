@@ -1,19 +1,12 @@
-const logs = [
-    {
-        title:'Bad weather approaching',
-        entry: 'We are coming up on bad weather',
-        shipIsBroken: true
-    },
-    {
-        title:'Clean the deck',
-        entry: 'Sweep and mopped desk',
-        shipIsBroken: true
-    },
-    {
-        title:'Docking',
-        entry: 'We will dock for 5 hours',
-        shipIsBroken: true
-    }
-];
+const mongoose = require('mongoose');
 
-module.exports = logs;
+const logsSchema = new mongoose.Schema({
+    title:{type: String, required: true},
+    entry:{ type: String, required: true},
+    shipIsBroken:{type: Boolean , default: true}
+    
+},{timeStamp: true});
+
+const Log = mongoose.model('Logs', logsSchema);
+
+module.exports = Log;

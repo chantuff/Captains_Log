@@ -3,13 +3,13 @@ const React = require('react');
 class Index extends React.Component {
     render() {
         const { logs } = this.props;
-        // const fruits = this.props.fruits;
+        // const logs = this.props.logs;
 
         return (
             <div>
                 <h1>Captains Log</h1>
                 <nav>
-                    <a href="/new">Index page</a>
+                    <a href="/logs/new">Create a new log</a>
                 </nav>
                 <ul>
                     {logs.map((log, i) => {
@@ -26,7 +26,7 @@ class Index extends React.Component {
                                 ? `Ship is broken`
                             :   `Ship is NOT broken`}
                             <br />
-                            <a href={`/logs/${log._id}/edit`}> Edit This Log </a>
+                            <a href={`/logs/${log._id}/edit`}> Edit this entry </a>
                             <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
                                 <input type="submit" value="DELETE" />
                             </form>
