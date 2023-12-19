@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
 
 //Create-
 
-router.post('/logs',async (req, res) => {
+router.post('/',async (req, res) => {
     if(req.body.shipIsBroken === 'on') { //if checked, req.body.readyToEat is set to 'on'
         req.body.shipIsBroken = true;
     } else {  //if not checked, req.body.readyToEat is undefined
